@@ -1,0 +1,57 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+<body>
+
+
+<div class="small_div">
+
+<div class="container">
+    <br>
+    <h2>Employee List</h2>
+    <hr>
+
+    <form action="/update/{{ employees.id }}">
+
+        {% csrf_token %}
+
+        <label class="form-group" for="name">Name: </label>
+        <input class="form-control" type="text" name="name" value="{{ employees.name }}" placeholder="{{ employees.name }}">
+
+        <label class="form-group" for="email">Email: </label>
+        <input class="form-control" type="email" name="email" value="{{ employees.email }}" placeholder="{{ employees.email }}">
+
+        <label class="form-group" for="gender">Gender: </label>
+        <input class="form-control" type="text" name="gender" value="{{ employees.gender }}" placeholder="{{ employees.gender }}">
+
+        <label class="form-group" for="city">City: </label>
+        <input class="form-control" type="text" name="city" value="{{ employees.city }}" placeholder="{{ employees.city }}">
+
+        <label class="form-group" for="dob">Dob: </label>
+        <input class="form-control" type="text" name="date of birth" value="{{ employees.dob }}" placeholder="{{ employees.dob }}">
+
+        <label class="form-group" for="phone">Phone: </label>
+        <input class="form-control" type="text" name="phone" value="{{ employees.phone }}" placeholder="{{ employees.phone }}">
+
+        <br>
+
+        <input class="btn btn-primary" type="submit" value="Update">
+
+    </form>
+
+
+</div>
+</div>
+
+</body>
+</html>
